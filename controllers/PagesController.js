@@ -16,7 +16,7 @@ exports.getSignupUser = (req, res) => {
     try {
       const items = await Item.findAll();
   
-      res.render("Home", { blogs: items, user: req.session.user,role:req.session.role});
+      res.status(200).render("Home", { blogs: items, user: req.session.user,role:req.session.role});
     } catch (error) {
       console.error("Error fetching blogs:", error);
       res.status(500).send("Internal Server Error");

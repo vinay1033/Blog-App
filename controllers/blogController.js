@@ -30,7 +30,7 @@ exports.deleteBlogById = async (req, res) => {
     }
     await item.destroy();
 
-    res.redirect("/home");
+    res.status(200).redirect("/home");
   } catch (error) {
     console.error("Error deleting blog:", error);
     res.status(500).send("Internal Server Error");
